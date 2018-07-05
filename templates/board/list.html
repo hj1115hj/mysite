@@ -24,7 +24,7 @@
 					<tr>
 
 						<td>{{board_list.count | add:1 | sub:forloop.counter}}</td>
-						<td><a href="">{{board.title}}</a></td>
+						<td><a href="/board/view?id={{board.id}}">{{board.title}}</a></td>
 						<td>{{board.user.name}}</td>
 						<td>{{board.hit}}</td>
 						<td>{{board.regdate|date:'Y-m-d H:i:s'}}</td>

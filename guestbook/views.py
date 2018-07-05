@@ -11,9 +11,9 @@ from django.http import HttpResponseRedirect
 def list(request):
     guestbook_list = Guestbook.objects.all().order_by('-regdate')
 
-    context = {'guestbook_list': guestbook_list}
+    content = {'guestbook_list': guestbook_list}
 
-    return render(request, 'guestbook/list.html',context)
+    return render(request, 'guestbook/list.html',content)
 
 def add(request):
     guestbook = Guestbook()
@@ -28,8 +28,8 @@ def add(request):
 def deleteform(request):
     id= request.GET.get('id','')
     #print("id =======%s" %(id))
-    context = {'id': id}
-    return render(request,'guestbook/deleteform.html',context)
+    content = {'id': id}
+    return render(request,'guestbook/deleteform.html',content)
 
 def delete(request):
     id =request.POST['id']
