@@ -16,9 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from main import views as main_views
-
+import guestbook.views as guestbook_views
+import user.views as user_views
+import board.views as board_views
 
 urlpatterns = [
     path('',main_views.index),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('guestbook/', guestbook_views.list),
+    path('guestbook/add', guestbook_views.add),
+    path('guestbook/deleteform', guestbook_views.deleteform),
+    path('guestbook/delete', guestbook_views.delete),
+    path('user/join', user_views.join),
+    path('user/joinform',user_views.joinform),
+    path('user/joinsuccess',user_views.joinsuccess),
+    path('user/loginform',user_views.loginform),
+    path('user/login',user_views.login),
+    path('user/logout',user_views.logout),
+    path('board/',board_views.list),
+    path('board/writeform',board_views.writeform),
+    path('board/insert',board_views.insert),
+    path('board/delete',board_views.delete)
+
 ]
